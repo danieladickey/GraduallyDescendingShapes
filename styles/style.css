@@ -1,0 +1,106 @@
+* {
+    color: white;
+}
+
+html {
+    background: black;
+}
+
+.frame {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+}
+
+#game {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    display: block;
+    /*width: 600px;  !* this is controlled in dynamic_style.js *!*/
+    /*height: 600px; !* this is controlled in dynamic_style.js *!*/
+    font-size: 38px;
+    /*border-radius: 10px;*/
+    /*border: solid greenyellow;*/
+}
+
+canvas {
+    /*border-radius: 10px;*/
+    /*border: solid white;*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#game .screen {
+    display: none;
+}
+
+#game .screen.active {
+    display: block;
+}
+
+ul.menu {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.menu li {
+    margin: .4em 0 .4em 0;
+}
+
+ul.menu li button {
+    width: 10em;
+}
+
+#game div h1 {
+    font-size: 1em;
+    text-align: center;
+}
+
+#high-scores ol {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#game div p {
+    font-size: 0.5em;
+}
+
+#credits p, h4, h3 {
+    text-align: center;
+}
+
+#instructions p {
+    text-align: justify;
+}
+
+.controls, .settings {
+    width: 8em;
+    margin-right: 50px;
+}
+
+.labels {
+    padding-top: 20px;
+    width: 200px;
+    text-align: right;
+}
+
+#controls, #settings {
+    text-align: center;
+}
+
+#controls .col, #settings .col {
+    padding: 0;
+}

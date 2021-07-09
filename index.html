@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>GRADUALLY DESCENDING SHAPES</title>
+
+    <!--  Custom CSS  -->
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!--  Icon  -->
+    <link href="assets/images/icon.png" rel="icon">
+    <link href="assets/images/icon.png" rel="apple-touch-icon">
+
+    <!--  Javascript code  -->
+    <script>
+        let MyGame = {
+            screens: {},
+            input: {},
+            objects: {},
+            render: [],
+            systems: {},
+        };
+    </script>
+
+    <script src="scripts/dynamic_style.js" defer></script>
+    <script src="scripts/audio.js" defer></script>
+    <script src="scripts/localData.js" defer></script>
+    <script src="scripts/input-keyboard.js"> defer</script>
+    <script src="scripts/random.js" defer></script>
+    <script src="scripts/game.js" defer></script>
+
+    <script src="scripts/systems/particle-system.js" defer></script>
+    <script src="scripts/systems/artificial-intelligence.js"></script>
+
+    <script src="scripts/objects/texture-obj.js" defer></script>
+    <script src="scripts/objects/player-obj.js" defer></script>
+    <script src="scripts/objects/message.js" defer></script>
+    <script src="scripts/objects/arena-obj.js"></script>
+
+    <script src="scripts/render/core.js" defer></script>
+    <script src="scripts/render/arena.js" defer></script>
+    <script src="scripts/render/message.js" defer></script>
+    <script src="scripts/render/particle-system.js" defer></script>
+    <script src="scripts/render/texture.js" defer></script>
+
+    <script src="scripts/screens/controls.js" defer></script>
+    <script src="scripts/screens/credits.js" defer></script>
+    <script src="scripts/screens/high_scores.js" defer></script>
+    <script src="scripts/screens/instructions.js" defer></script>
+    <script src="scripts/screens/main_menu.js" defer></script>
+    <script src="scripts/screens/pause.js" defer></script>
+    <script src="scripts/screens/settings.js" defer></script>
+    <script src="scripts/screens/gameplay.js" defer></script>
+</head>
+<body onload="MyGame.game.initialize();">
+
+<div id="game">
+    <div id="main-menu" class="screen frame">
+        <h1>GRADUALLY DESCENDING SHAPES</h1>
+        <ul class="menu">
+            <li>
+                <button id="id-new-game" class="btn btn-primary">New Game</button>
+            </li>
+            <li>
+                <button id="id-high-scores" class="btn btn-primary">High&nbsp;Scores</button>
+            </li>
+            <li>
+                <button id="id-instructions" class="btn btn-primary">Instructions</button>
+            </li>
+            <li>
+                <button id="id-settings" class="btn btn-primary">Settings</button>
+            </li>
+            <li>
+                <button id="id-credits" class="btn btn-primary">Credits</button>
+            </li>
+        </ul>
+    </div>
+
+    <div id="pause" class="screen frame">
+        <h1>GAME PAUSED</h1>
+        <ul class="menu">
+            <li>
+                <button id="id-pause-resume" class="btn btn-primary">Resume Game</button>
+            </li>
+            <li>
+                <button id="id-pause-settings" class="btn btn-primary">Settings</button>
+            </li>
+            <li>
+                <button id="id-pause-quit" class="btn btn-primary">Quit Game</button>
+            </li>
+        </ul>
+    </div>
+
+    <div id="game-play" class="screen">
+        <canvas id="id-canvas" width="1000" height="1000"></canvas>
+    </div>
+    <div id="high-scores" class="screen frame">
+        <h1>HIGH SCORES</h1>
+        <ol>
+            <li id="1st">10000</li>
+            <li id="2nd">9000</li>
+            <li id="3rd">8000</li>
+            <li id="4th">7000</li>
+            <li id="5th">0</li>
+        </ol>
+        <ul class="menu">
+            <li>
+                <button id="id-high-scores-back" class="btn btn-primary">Back</button>
+            </li>
+        </ul>
+    </div>
+
+    <div id="instructions" class="screen frame">
+        <h1>INSTRUCTIONS</h1>
+        <p>The game is over if your pieces reach the top of the screen.</p>
+        <p>You get points by clearing rows.</p>
+        <p>You get more points if you clear more rows at a time.</p>
+        <p>To clear a row fill it in completely with blocks.</p>
+        <p>Rotate and move blocks to fill in the space, don't let them pile up!</p>
+        <ul class="menu">
+            <li>
+                <button id="id-instructions-back" class="btn btn-primary">Back</button>
+            </li>
+        </ul>
+    </div>
+
+    <div id="controls" class="screen frame">
+        <h1>CONTROLS</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="labels">Move Left</p>
+                </div>
+                <div class="col">
+                    <button id="key1" class="btn btn-primary controls" onkeyup="event.preventDefault()">ArrowLeft
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="labels">Move Right</p>
+                </div>
+                <div class="col">
+                    <button id="key2" class="btn btn-primary controls" onkeyup="event.preventDefault()">ArrowRight
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="labels">Rotate Left</p>
+                </div>
+                <div class="col">
+                    <button id="key3" class="btn btn-primary controls" onkeyup="event.preventDefault()">Home</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="labels">Rotate Right</p>
+                </div>
+                <div class="col">
+                    <button id="key4" class="btn btn-primary controls" onkeyup="event.preventDefault()">PageUP</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="labels">Soft Drop</p>
+                </div>
+                <div class="col">
+                    <button id="key5" class="btn btn-primary controls" onkeyup="event.preventDefault()">ArrowDown
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="labels">Hard Drop</p>
+                </div>
+                <div class="col">
+                    <button id="key6" class="btn btn-primary controls" onkeyup="event.preventDefault()">ArrowUp</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="labels">Pause</p>
+                </div>
+                <div class="col">
+                    <button id="key7" class="btn btn-primary controls" onkeyup="event.preventDefault()">Escape</button>
+                </div>
+            </div>
+        </div>
+        <ul class="menu">
+            <li>
+                <button id="id-controls-back" class="btn btn-primary" onkeyup="event.preventDefault()">Back</button>
+            </li>
+        </ul>
+    </div>
+
+    <div id="settings" class="screen frame">
+        <h1>SETTINGS</h1>
+        <ul class="menu">
+            <li>
+                <button id="id-controls" class="btn btn-primary">Controls</button>
+            </li>
+        </ul>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="labels">Sound</p>
+                </div>
+                <div class="col">
+                    <button id="setting-sound" class="btn btn-success settings">ON</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="labels">Music</p>
+                </div>
+                <div class="col">
+                    <button id="setting-music" class="btn btn-success settings">ON</button>
+                </div>
+            </div>
+        </div>
+        <ul class="menu">
+            <li>
+                <button id="id-settings-back" class="btn btn-primary">Back</button>
+            </li>
+        </ul>
+    </div>
+
+    <div id="credits" class="screen frame">
+        <h1>CREDITS</h1>
+        <p>Daniel Dickey</p>
+        <ul class="menu">
+            <li>
+                <button id="id-credits-back" class="btn btn-primary">Back</button>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
