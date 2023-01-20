@@ -32,13 +32,13 @@ let settings = {
 }
 
 // fetch previously saved controls
-let previousControls = localStorage.getItem('savedControls');
+let previousControls = localStorage.getItem('savedControlsTetris');
 
 // fetch previously saved scores
-let previousHighScores = localStorage.getItem('savedScores');
+let previousHighScores = localStorage.getItem('savedScoresTetris');
 
 // fetch previously saved settings
-let previousSettings = localStorage.getItem('savedSettings');
+let previousSettings = localStorage.getItem('savedSettingsTetris');
 
 // if not null parse it (take string turn it into code) ...this seems like a security risk...
 if (previousControls !== null) {
@@ -77,7 +77,7 @@ setSettingButton('music');
 // function to add a key and save it on local machine
 function saveControl(key, value) {
     controls[key] = value; // set for game
-    localStorage['savedControls'] = JSON.stringify(controls); // save locally
+    localStorage['savedControlsTetris'] = JSON.stringify(controls); // save locally
 }
 
 // function to add/sort/save high scores on local machine
@@ -104,7 +104,7 @@ function addSortSaveHighScores(newScore = 0) {
     highScore["5th"] = list[4];
 
     // save scores to local machine
-    localStorage['savedScores'] = JSON.stringify(highScore);
+    localStorage['savedScoresTetris'] = JSON.stringify(highScore);
 
     // show high scores on high score page
     document.getElementById("1st").innerHTML = highScore["1st"];
@@ -119,7 +119,7 @@ function addSortSaveHighScores(newScore = 0) {
 // function to update settings and save it on local machine
 function saveSetting(key, value) {
     settings[key] = value; // set for game
-    localStorage['savedSettings'] = JSON.stringify(settings); // save locally
+    localStorage['savedSettingsTetris'] = JSON.stringify(settings); // save locally
     setSettingButton(key);
 }
 
