@@ -12,7 +12,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
     let yOffset = -0.6;
     let endGameTimer = 0;
     let newHighScore = false;
-    let attractMode = false;
+    let attractMode = true;
 
     let theParticles = systems.ParticleSystem({
             center: {x: 300, y: 300},

@@ -2,7 +2,7 @@ MyGame.screens['main-menu'] = (function (game) {
     'use strict';
 
     let userBusy = false;
-    let attractModeDelay = 2000 // ms
+    let attractModeDelay = 5000 // ms
 
     function initialize() {
         // Setup each of screens events for the screens

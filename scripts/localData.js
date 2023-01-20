@@ -9,10 +9,10 @@ const NUMBER_OF_CONTROLS = 7;
 let controls = {
     "key1": 'ArrowLeft',
     "key2": 'ArrowRight',
-    "key3": 'Home',
-    "key4": 'PageUP',
+    "key3": 'z',
+    "key4": 'ArrowUp',
     "key5": 'ArrowDown',
-    "key6": 'ArrowUp',
+    "key6": ' ',
     "key7": 'Escape',
 }
 
