@@ -11,7 +11,7 @@ let controls = {
     "key4": 'ArrowUp',
     "key5": 'ArrowDown',
     "key6": ' ',
-    "key7": 'Escape',
+    "key7": 'Escape'
 }
 
 // default settings
@@ -26,12 +26,12 @@ let previousControls = localStorage.getItem('savedControlsTetris');
 // fetch previously saved settings
 let previousSettings = localStorage.getItem('savedSettingsTetris');
 
-// if not null parse it (take string turn it into code) ...this seems like a security risk...
+// if not null then parse it (take string turn it into code) ...this seems like a security risk...
 if (previousControls !== null) {
     controls = JSON.parse(previousControls);
 }
 
-// if not null parse it (take string turn it into code) ...this seems like a security risk...
+// if not null then parse it (take string turn it into code) ...this seems like a security risk...
 if (previousSettings !== null) {
     settings = JSON.parse(previousSettings);
 }
@@ -43,6 +43,7 @@ for (let i = 1; i <= NUMBER_OF_CONTROLS; i++) {
     // special case for space bar (" ")
     if (controls[keyString] === " ") {
         document.getElementById(keyString).innerHTML = "Space";
+    // default case
     } else {
         document.getElementById(keyString).innerHTML = controls[keyString];
     }
