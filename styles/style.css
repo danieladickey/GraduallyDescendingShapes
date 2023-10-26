@@ -104,3 +104,11 @@ ul.menu li button {
 #controls .col, #settings .col {
     padding: 0;
 }
+
+.nhs {
+    font-size: 0.5em;
+}
+
+input {
+    color: black;
+}

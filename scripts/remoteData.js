@@ -10,31 +10,31 @@ let highScore = {
     "1st": {
         "score": 0,
         "level": 99,
-        "initials": "DAD",
+        "initials": "D.A.D.",
         "date": new Date("1987-1-3").toString().slice(3, 15)
     },
     "2nd": {
         "score": 0,
         "level": 99,
-        "initials": "DAD",
+        "initials": "D.A.D.",
         "date": new Date("1987-1-3").toString().slice(3, 15)
     },
     "3rd": {
         "score": 0,
         "level": 99,
-        "initials": "DAD",
+        "initials": "D.A.D.",
         "date": new Date("1987-1-3").toString().slice(3, 15)
     },
     "4th": {
         "score": 0,
         "level": 99,
-        "initials": "DAD",
+        "initials": "D.A.D.",
         "date": new Date("1987-1-3").toString().slice(3, 15)
     },
     "5th": {
         "score": 0,
         "level": 99,
-        "initials": "DAD",
+        "initials": "D.A.D.",
         "date": new Date("1987-1-3").toString().slice(3, 15)
     }
 }
@@ -77,12 +77,12 @@ function addSortSaveHighScores(newScore = 0) {
     localStorage['savedScoresTetris'] = JSON.stringify(highScore);
 
     // show high scores on high score page
-    document.getElementById("1st").innerHTML = highScore["1st"].score.toString().padStart(6, '0') + COL_DIVIDER + highScore["1st"].level.toString().padStart(2, '0') + COL_DIVIDER + highScore["1st"].initials + COL_DIVIDER + highScore["1st"].date;
-    document.getElementById("2nd").innerHTML = highScore["2nd"].score.toString().padStart(6, '0') + COL_DIVIDER + highScore["2nd"].level.toString().padStart(2, '0') + COL_DIVIDER + highScore["2nd"].initials + COL_DIVIDER + highScore["2nd"].date;
-    document.getElementById("3rd").innerHTML = highScore["3rd"].score.toString().padStart(6, '0') + COL_DIVIDER + highScore["3rd"].level.toString().padStart(2, '0') + COL_DIVIDER + highScore["3rd"].initials + COL_DIVIDER + highScore["3rd"].date;
-    document.getElementById("4th").innerHTML = highScore["4th"].score.toString().padStart(6, '0') + COL_DIVIDER + highScore["4th"].level.toString().padStart(2, '0') + COL_DIVIDER + highScore["4th"].initials + COL_DIVIDER + highScore["4th"].date;
-    document.getElementById("5th").innerHTML = highScore["5th"].score.toString().padStart(6, '0') + COL_DIVIDER + highScore["5th"].level.toString().padStart(2, '0') + COL_DIVIDER + highScore["5th"].initials + COL_DIVIDER + highScore["5th"].date;
+    document.getElementById("1st").innerHTML = highScore["1st"].score.toString().padStart(6, '0') + COL_DIVIDER + highScore["1st"].level.toString().padStart(2, '0') + COL_DIVIDER + highScore["1st"].initials + COL_DIVIDER + highScore["1st"].date.slice(0,4) + "-" + highScore["1st"].date.slice(5, 7)+ "-" + highScore["1st"].date.slice(10, 12);
+    document.getElementById("2nd").innerHTML = highScore["2nd"].score.toString().padStart(6, '0') + COL_DIVIDER + highScore["2nd"].level.toString().padStart(2, '0') + COL_DIVIDER + highScore["2nd"].initials + COL_DIVIDER + highScore["2nd"].date.slice(0,4) + "-" + highScore["1st"].date.slice(5, 7)+ "-" + highScore["1st"].date.slice(10, 12);
+    document.getElementById("3rd").innerHTML = highScore["3rd"].score.toString().padStart(6, '0') + COL_DIVIDER + highScore["3rd"].level.toString().padStart(2, '0') + COL_DIVIDER + highScore["3rd"].initials + COL_DIVIDER + highScore["3rd"].date.slice(0,4) + "-" + highScore["1st"].date.slice(5, 7)+ "-" + highScore["1st"].date.slice(10, 12);
+    document.getElementById("4th").innerHTML = highScore["4th"].score.toString().padStart(6, '0') + COL_DIVIDER + highScore["4th"].level.toString().padStart(2, '0') + COL_DIVIDER + highScore["4th"].initials + COL_DIVIDER + highScore["4th"].date.slice(0,4) + "-" + highScore["1st"].date.slice(5, 7)+ "-" + highScore["1st"].date.slice(10, 12);
+    document.getElementById("5th").innerHTML = highScore["5th"].score.toString().padStart(6, '0') + COL_DIVIDER + highScore["5th"].level.toString().padStart(2, '0') + COL_DIVIDER + highScore["5th"].initials + COL_DIVIDER + highScore["5th"].date.slice(0,4) + "-" + highScore["1st"].date.slice(5, 7)+ "-" + highScore["1st"].date.slice(10, 12);
 
-    // return true if the newscore isn't last (6th) place because high score only shows top 5
+    // return true if the newscore isn't last (5th) place because high score only shows top 5
     return list[list.length - 1] !== newScore;
 }

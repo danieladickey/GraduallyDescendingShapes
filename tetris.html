@@ -53,6 +53,7 @@
     <script src="scripts/screens/high_scores.js" defer></script>
     <script src="scripts/screens/instructions.js" defer></script>
     <script src="scripts/screens/main_menu.js" defer></script>
+    <script src="scripts/screens/new_high_score.js" defer></script>
     <script src="scripts/screens/pause.js" defer></script>
     <script src="scripts/screens/settings.js" defer></script>
     <script src="scripts/screens/gameplay.js" defer></script>
@@ -78,6 +79,9 @@
             <li>
                 <button id="id-credits" class="btn btn-primary">Credits</button>
             </li>
+            <li>
+                <button id="id-new-high-score" class="btn btn-primary">New High Score</button>
+            </li>
         </ul>
     </div>
 
@@ -99,6 +103,7 @@
     <div id="game-play" class="screen">
         <canvas id="id-canvas" width="1000" height="1000"></canvas>
     </div>
+
     <div id="high-scores" class="screen frame">
         <h1>HIGH SCORES</h1>
         <ol>
@@ -240,6 +245,20 @@
                 <button id="id-credits-back" class="btn btn-primary">Back</button>
             </li>
         </ul>
+    </div>
+
+    <div id="new-high-score" class="screen frame">
+        <h1>NEW HIGH SCORE</h1>
+        <div class="text-center">
+            <p class="nhs m-0">Congratulations!</p>
+            <input class="nhs text-center" id="id-initials-input" type="text" 
+            placeholder="Enter your initials" maxlength="3" oninput="this.value = this.value.toUpperCase()">
+        </div>
+            <ul class="menu">
+                <li>
+                    <button id="id-new-highscore-submit" type="submit" class="btn btn-primary">Submit</button>
+                </li>
+            </ul>
     </div>
 </div>
 </body>
