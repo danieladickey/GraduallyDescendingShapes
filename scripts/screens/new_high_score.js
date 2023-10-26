@@ -2,11 +2,20 @@ MyGame.screens['new-high-score'] = (function (game, screens) {
     'use strict';
 
     function initialize() {
-        // Go back to main screens...
+        // Submit user's initials to the high score
         document.getElementById('id-new-highscore-submit').addEventListener(
             'click',
-            function () {
-                console.log(document.getElementById('id-initials-inpu').innerHTML);
+            () => {
+                // Add periods between initials
+                let input = document.getElementById('id-initials-input').value;
+                let initials = "";
+                for (const initial of input) {
+                    initials += initial + "."
+                }
+                // TODO: add function call to save high score
+                
+                // Show updated high-score 
+                game.showScreen('high-scores');
             }
         );
     }
