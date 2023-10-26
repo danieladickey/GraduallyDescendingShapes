@@ -6,12 +6,8 @@ MyGame.screens['new-high-score'] = (function (game, screens) {
         document.getElementById('id-new-highscore-submit').addEventListener(
             'click',
             () => {
-                // Add periods between initials
-                let input = document.getElementById('id-initials-input').value;
-                let initials = "";
-                for (const initial of input) {
-                    initials += initial + "."
-                }
+                let initialsFromPlayerInput = document.getElementById('id-initials-input').value;
+
                 // TODO: add function call to save high score
                 
                 // Show updated high-score 
