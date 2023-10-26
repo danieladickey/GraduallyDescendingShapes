@@ -39,8 +39,6 @@ let highScore = {
     }
 }
 
-console.log(highScore["1st"].date + " is today's date")
-
 // fetch previously saved scores
 let previousHighScores = localStorage.getItem('savedScoresTetris');
 
