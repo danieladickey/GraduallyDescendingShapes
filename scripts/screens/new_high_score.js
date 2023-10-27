@@ -9,7 +9,7 @@ MyGame.screens['new-high-score'] = (function (game, screens) {
                 let initialsFromPlayerInput = document.getElementById('id-initials-input').value;
 
                 // TODO: add function call to save high score
-                
+
                 // Show updated high-score 
                 game.showScreen('high-scores');
             }

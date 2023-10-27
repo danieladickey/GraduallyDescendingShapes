@@ -18,7 +18,7 @@ MyGame.objects.HighScore = function (spec) {
         get level() { spec.level; },
         get initials() { spec.initials; },
         get date() { spec.date; },
-        
+
         /**
          * Places a period after each initial
          * @param {string} initials

@@ -61,8 +61,8 @@ Random = (function () {
     }
 
     return {
-        randomCircleVector : randomCircleVector,
-        nextGaussian : nextGaussian,
+        randomCircleVector: randomCircleVector,
+        nextGaussian: nextGaussian,
     }
 
 })();

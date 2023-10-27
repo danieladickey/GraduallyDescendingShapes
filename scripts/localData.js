@@ -43,7 +43,7 @@ for (let i = 1; i <= NUMBER_OF_CONTROLS; i++) {
     // special case for space bar (" ")
     if (controls[keyString] === " ") {
         document.getElementById(keyString).innerHTML = "Space";
-    // default case
+        // default case
     } else {
         document.getElementById(keyString).innerHTML = controls[keyString];
     }

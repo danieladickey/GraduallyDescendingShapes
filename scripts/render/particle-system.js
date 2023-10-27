@@ -11,7 +11,7 @@ MyGame.render.ParticleSystem = function (system, graphics, imageSrc) {
 
     //
     // Get the texture to use for the particle system loading and ready for rendering
-    image.onload = function() {
+    image.onload = function () {
         isReady = true;
     }
     image.src = imageSrc;

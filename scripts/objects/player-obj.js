@@ -267,7 +267,7 @@ MyGame.objects.Player = function (spec) {
                 }
                 for (let i = 0; i < spec.arena[0].length; i++) {
                     spec.arena[y][i] = 0;
-                    particles.shipThrust({x: i * spec.unit, y: (y - 5) * spec.unit});
+                    particles.shipThrust({ x: i * spec.unit, y: (y - 5) * spec.unit });
                 }
                 topRow = y;
                 rowsCleared.push(y);

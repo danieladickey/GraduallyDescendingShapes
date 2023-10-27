@@ -20,7 +20,7 @@ MyGame.objects.Texture = function (spec) {
     image.src = spec.imageAsset;
 
     function setLocation(row, col, unit) {
-        spec.center = {x: 1 * unit / 2 + row * unit, y: 1 * unit / 2 + col * unit};
+        spec.center = { x: 1 * unit / 2 + row * unit, y: 1 * unit / 2 + col * unit };
     }
 
     let api = {
@@ -39,7 +39,7 @@ MyGame.objects.Texture = function (spec) {
         set image(imageAsset) {
             spec.imageAsset = imageAsset;
         },
-        setLocation : setLocation,
+        setLocation: setLocation,
 
     };
 

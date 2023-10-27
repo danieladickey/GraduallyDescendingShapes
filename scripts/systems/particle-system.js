@@ -16,8 +16,8 @@ MyGame.systems.ParticleSystem = function (spec) {
     function createExplosion(centerX, centerY) {
         let size = Random.nextGaussian(spec.size.mean, spec.size.stdev);
         return {
-            center: {x: centerX, y: centerY},
-            size: {width: size, height: size},  // Making square particles
+            center: { x: centerX, y: centerY },
+            size: { width: size, height: size },  // Making square particles
             direction: Random.randomCircleVector(),
             speed: Random.nextGaussian(spec.speed.mean, spec.speed.stdev), // pixels per second
             rotation: 0,
@@ -34,8 +34,8 @@ MyGame.systems.ParticleSystem = function (spec) {
     function createThruster(centerX, centerY, directionVectorX, directionVectorY) {
         let size = Random.nextGaussian(spec.size.mean, spec.size.stdev);
         return {
-            center: {x: centerX + directionVectorX * -18, y: centerY + directionVectorY * -18},
-            size: {width: size, height: size},  // Making square particles
+            center: { x: centerX + directionVectorX * -18, y: centerY + directionVectorY * -18 },
+            size: { width: size, height: size },  // Making square particles
             direction: {
                 x: Random.nextGaussian(directionVectorX, .2) * -1,
                 y: Random.nextGaussian(directionVectorY, .2) * -1
@@ -103,7 +103,7 @@ MyGame.systems.ParticleSystem = function (spec) {
 
     // creates new particles when ship is thrusting
     function shipThrust(center) {
-        let vector = {x: 0, y: 1};
+        let vector = { x: 0, y: 1 };
         //
         // Generate some new particles
         for (let particle = 0; particle < 3; particle++) {

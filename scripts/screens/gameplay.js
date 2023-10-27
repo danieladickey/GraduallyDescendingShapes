@@ -15,11 +15,11 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
     let attractMode = true;
 
     let theParticles = systems.ParticleSystem({
-            center: {x: 300, y: 300},
-            size: {mean: 25, stdev: 20},
-            speed: {mean: 200, stdev: 25},
-            lifetime: {mean: .1, stdev: .1}
-        },
+        center: { x: 300, y: 300 },
+        size: { mean: 25, stdev: 20 },
+        speed: { mean: 200, stdev: 25 },
+        lifetime: { mean: .1, stdev: .1 }
+    },
         graphics);
 
     let renderTheParticles = renderer.ParticleSystem(theParticles, graphics, 'assets/images/particle.png');
@@ -80,38 +80,38 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
     let colors = [null,
         objects.Texture({
             imageAsset: 'assets/images/teal.png',
-            center: {x: 1 * unit / 2, y: 1 * unit / 2},
-            size: {width: 1 * unit, height: 1 * unit}
+            center: { x: 1 * unit / 2, y: 1 * unit / 2 },
+            size: { width: 1 * unit, height: 1 * unit }
         }),
         objects.Texture({
             imageAsset: 'assets/images/orange.png',
-            center: {x: 1 * unit / 2, y: 1 * unit / 2},
-            size: {width: 1 * unit, height: 1 * unit}
+            center: { x: 1 * unit / 2, y: 1 * unit / 2 },
+            size: { width: 1 * unit, height: 1 * unit }
         }),
         objects.Texture({
             imageAsset: 'assets/images/blue.png',
-            center: {x: 1 * unit / 2, y: 1 * unit / 2},
-            size: {width: 1 * unit, height: 1 * unit}
+            center: { x: 1 * unit / 2, y: 1 * unit / 2 },
+            size: { width: 1 * unit, height: 1 * unit }
         }),
         objects.Texture({
             imageAsset: 'assets/images/yellow.png',
-            center: {x: 1 * unit / 2, y: 1 * unit / 2},
-            size: {width: 1 * unit, height: 1 * unit}
+            center: { x: 1 * unit / 2, y: 1 * unit / 2 },
+            size: { width: 1 * unit, height: 1 * unit }
         }),
         objects.Texture({
             imageAsset: 'assets/images/red.png',
-            center: {x: 1 * unit / 2, y: 1 * unit / 2},
-            size: {width: 1 * unit, height: 1 * unit}
+            center: { x: 1 * unit / 2, y: 1 * unit / 2 },
+            size: { width: 1 * unit, height: 1 * unit }
         }),
         objects.Texture({
             imageAsset: 'assets/images/green.png',
-            center: {x: 1 * unit / 2, y: 1 * unit / 2},
-            size: {width: 1 * unit, height: 1 * unit}
+            center: { x: 1 * unit / 2, y: 1 * unit / 2 },
+            size: { width: 1 * unit, height: 1 * unit }
         }),
         objects.Texture({
             imageAsset: 'assets/images/purple.png',
-            center: {x: 1 * unit / 2, y: 1 * unit / 2},
-            size: {width: 1 * unit, height: 1 * unit}
+            center: { x: 1 * unit / 2, y: 1 * unit / 2 },
+            size: { width: 1 * unit, height: 1 * unit }
         }),
     ];
 
@@ -128,7 +128,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
     const player = objects.Player({
         name: "Player",
         arena: arenaObject.arena,
-        location: {x: 3, y: 3},
+        location: { x: 3, y: 3 },
         currentTetrominoe: shapes[4],
         nextShape: shapes[7],
         shapes: shapes,
@@ -156,7 +156,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
     const aiPlayer = objects.Player({
         name: "AI",
         arena: arenaObject.arena,
-        location: {x: 3, y: 3},
+        location: { x: 3, y: 3 },
         currentTetrominoe: shapes[4],
         nextShape: shapes[7],
         shapes: shapes,
@@ -185,8 +185,8 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const arenaTexture = objects.Texture({
         imageAsset: 'assets/images/bg_gray.jpg',
-        center: {x: arenaWidth / 2 * unit - 1, y: arenaHeight / 2 * unit},
-        size: {width: arenaWidth * unit, height: arenaHeight * unit},
+        center: { x: arenaWidth / 2 * unit - 1, y: arenaHeight / 2 * unit },
+        size: { width: arenaWidth * unit, height: arenaHeight * unit },
     });
 
     const displayNext = objects.Text({
@@ -194,7 +194,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         font: '22pt monospace',
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
-        position: {x: 15 * unit, y: (1 + yOffset) * unit}, // 16
+        position: { x: 15 * unit, y: (1 + yOffset) * unit }, // 16
         strokeWidth: 1,
         timeSinceLastUpdated: 0,
         center: true,
@@ -202,8 +202,8 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const nextMetal = objects.Texture({
         imageAsset: 'assets/images/bg_metal.jpg',
-        center: {x: 15 * unit, y: (3.5 + yOffset) * unit}, // 3.5
-        size: {width: 6 * unit, height: 3.5 * unit}
+        center: { x: 15 * unit, y: (3.5 + yOffset) * unit }, // 3.5
+        size: { width: 6 * unit, height: 3.5 * unit }
     });
 
     const displayScore = objects.Text({
@@ -211,7 +211,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         font: '22pt monospace',
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
-        position: {x: 15 * unit, y: (6 + yOffset) * unit}, // 1
+        position: { x: 15 * unit, y: (6 + yOffset) * unit }, // 1
         strokeWidth: 1,
         timeSinceLastUpdated: 0,
         center: true,
@@ -219,8 +219,8 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const scoreMetal = objects.Texture({
         imageAsset: 'assets/images/bg_metal.jpg',
-        center: {x: 15 * unit, y: (8.5 + yOffset) * unit}, // 3.5
-        size: {width: 6 * unit, height: 3.5 * unit}
+        center: { x: 15 * unit, y: (8.5 + yOffset) * unit }, // 3.5
+        size: { width: 6 * unit, height: 3.5 * unit }
     });
 
     const showScore = objects.Text({
@@ -228,7 +228,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         font: '70pt monospace',
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
-        position: {x: 15 * unit, y: (8.25 + yOffset) * unit}, // 1
+        position: { x: 15 * unit, y: (8.25 + yOffset) * unit }, // 1
         strokeWidth: 1,
         timeSinceLastUpdated: 0,
         center: true,
@@ -239,7 +239,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         font: '22pt monospace',
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
-        position: {x: 15 * unit, y: (11 + yOffset) * unit}, // 6
+        position: { x: 15 * unit, y: (11 + yOffset) * unit }, // 6
         strokeWidth: 1,
         timeSinceLastUpdated: 0,
         center: true,
@@ -247,8 +247,8 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const levelMetal = objects.Texture({
         imageAsset: 'assets/images/bg_metal.jpg',
-        center: {x: 15 * unit, y: (13.5 + yOffset) * unit}, // 3.5
-        size: {width: 6 * unit, height: 3.5 * unit}
+        center: { x: 15 * unit, y: (13.5 + yOffset) * unit }, // 3.5
+        size: { width: 6 * unit, height: 3.5 * unit }
     });
 
     const showLevel = objects.Text({
@@ -256,7 +256,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         font: '70pt monospace',
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
-        position: {x: 15 * unit, y: (13.25 + yOffset) * unit}, // 1
+        position: { x: 15 * unit, y: (13.25 + yOffset) * unit }, // 1
         strokeWidth: 1,
         timeSinceLastUpdated: 0,
         center: true,
@@ -267,7 +267,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         font: '22pt monospace',
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
-        position: {x: 15 * unit, y: (16 + yOffset) * unit}, // 11
+        position: { x: 15 * unit, y: (16 + yOffset) * unit }, // 11
         strokeWidth: 1,
         timeSinceLastUpdated: 0,
         center: true,
@@ -275,8 +275,8 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const linesMetal = objects.Texture({
         imageAsset: 'assets/images/bg_metal.jpg',
-        center: {x: 15 * unit, y: (18.5 + yOffset) * unit}, // 3.5
-        size: {width: 6 * unit, height: 3.5 * unit}
+        center: { x: 15 * unit, y: (18.5 + yOffset) * unit }, // 3.5
+        size: { width: 6 * unit, height: 3.5 * unit }
     });
 
     const showLines = objects.Text({
@@ -284,7 +284,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         font: '70pt monospace',
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
-        position: {x: 15 * unit, y: (18.25 + yOffset) * unit}, // 1
+        position: { x: 15 * unit, y: (18.25 + yOffset) * unit }, // 1
         strokeWidth: 1,
         timeSinceLastUpdated: 0,
         center: true,
@@ -295,7 +295,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         font: '40pt monospace',
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
-        position: {x: 5 * unit, y: 9 * unit},
+        position: { x: 5 * unit, y: 9 * unit },
         strokeWidth: 1,
         timeSinceLastUpdated: 0,
         center: true,
@@ -306,7 +306,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         font: '70pt monospace',
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
-        position: {x: 5 * unit, y: 11 * unit},
+        position: { x: 5 * unit, y: 11 * unit },
         strokeWidth: 1,
         timeSinceLastUpdated: 0,
         center: true,
@@ -317,7 +317,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         font: '70pt monospace',
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
-        position: {x: 5 * unit, y: 9 * unit},
+        position: { x: 5 * unit, y: 9 * unit },
         strokeWidth: 1,
         timeSinceLastUpdated: 0,
         center: true,
@@ -338,7 +338,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
     // centers a text object (in case it's width changes)
     function reCenter(textObject, xCenter) {
         let scoreWidth = graphics.measureTextWidth(textObject);
-        textObject.position = {x: xCenter - (scoreWidth / 2), y: textObject.position.y}
+        textObject.position = { x: xCenter - (scoreWidth / 2), y: textObject.position.y }
     }
 
     // function to get unitSize; returns a fraction of the entire size of the canvas
