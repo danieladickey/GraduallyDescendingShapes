@@ -13,6 +13,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
     let endGameTimer = 0;
     let newHighScore = false;
     let attractMode = true;
+    let highScores;
 
     let theParticles = systems.ParticleSystem({
         center: { x: 300, y: 300 },
@@ -362,9 +363,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
     function endGame() {
         cancelNextInput = true;
         if (endGameTimer === 0) {
-            // TODO: display GAME OVER if no new high score
-            addSortSaveHighScores(player.score);
-            if (!attractMode && player.score > highScore["5th"]) {
+            if (!attractMode && highScores.check(player.score)) {
                 newHighScore = true;
                 showHighScore.updateMessage(player.score);
                 reCenter(showHighScore, 5 * unit);
@@ -374,8 +373,13 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
                 }
             }
         }
-        // after 3 seconds exit game and go to high score menu screen
-        else if (endGameTimer > 3000) {
+        // if player made a record score: after 3 seconds exit game and let player enter their initials
+        else if (endGameTimer > 3000 && newHighScore) {
+            game.showScreen('new-high-score');
+            resetGame();
+        }
+        // if player failed to break any records: after 3 seconds exit game and go to main score menu screen
+        else if (endGameTimer > 3000 && !newHighScore) {
             game.showScreen('main-menu');
             resetGame();
         }
@@ -540,6 +544,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
     function initialize() {
         unit = getUnitSize(fullSize);
         registerControls();
+        highScores = objects.HighScores({});
     }
 
     function run() {
@@ -556,6 +561,16 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         resumeGame: resumeGame,
         registerControls: registerControls,
         setAttract: setAttract,
+        get highScores() {
+            return highScores;
+        },
+        get newHighScore() {
+            let newHScore = MyGame.objects.HighScore({
+                score: player.score,
+                level: player.level
+            });
+            return newHScore;
+        },
     };
 
 }(MyGame.game, MyGame.objects, MyGame.render, MyGame.graphics, MyGame.input, MyGame.systems, MyGame.assets, MyGame.ai));

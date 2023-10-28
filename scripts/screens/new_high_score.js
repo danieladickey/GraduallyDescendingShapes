@@ -1,4 +1,4 @@
-MyGame.screens['new-high-score'] = (function (game, screens) {
+MyGame.screens['new-high-score'] = (function (game) {
     'use strict';
 
     function initialize() {
@@ -6,11 +6,15 @@ MyGame.screens['new-high-score'] = (function (game, screens) {
         document.getElementById('id-new-highscore-submit').addEventListener(
             'click',
             () => {
+                // Get user's initials from input
                 let initialsFromPlayerInput = document.getElementById('id-initials-input').value;
-
-                // TODO: add function call to save high score
-
-                // Show updated high-score 
+                // Get the new HighScore from the game-play API
+                let newHS = MyGame.screens["game-play"].newHighScore;
+                // Add the user inputed initials to the new HighScore
+                newHS.initials = initialsFromPlayerInput;
+                // Add the new HighScore to the HighScores
+                MyGame.screens["game-play"].highScores.append(newHS);
+                // Display the recently updated HighScores to the user
                 game.showScreen('high-scores');
             }
         );

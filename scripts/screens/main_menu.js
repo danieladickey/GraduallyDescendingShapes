@@ -56,14 +56,6 @@ MyGame.screens['main-menu'] = (function (game) {
                 userBusy = true;
                 game.showScreen('credits');
             });
-
-        document.getElementById('id-new-high-score').addEventListener(
-            'click',
-            function () {
-                // user is busy: entering their initials
-                userBusy = true;
-                game.showScreen('new-high-score');
-            });
     }
 
     // this function is run each time the main menu is displayed to the user

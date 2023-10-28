@@ -30,7 +30,6 @@
     <script src="scripts/dynamic_style.js" defer></script>
     <script src="scripts/audio.js" defer></script>
     <script src="scripts/localData.js" defer></script>
-    <script src="scripts/remoteData.js" defer></script>
     <script src="scripts/input-keyboard.js"> defer</script>
     <script src="scripts/random.js" defer></script>
     <script src="scripts/game.js" defer></script>
@@ -43,6 +42,7 @@
     <script src="scripts/objects/message.js" defer></script>
     <script src="scripts/objects/arena-obj.js" defer></script>
     <script src="scripts/objects/high-score-obj.js" defer></script>
+    <script src="scripts/objects/high-scores-obj.js" defer></script>
 
     <script src="scripts/render/core.js" defer></script>
     <script src="scripts/render/arena.js" defer></script>
@@ -82,9 +82,6 @@
                 <li>
                     <button id="id-credits" class="btn btn-primary">Credits</button>
                 </li>
-                <li>
-                    <button id="id-new-high-score" class="btn btn-primary">New High Score</button>
-                </li>
             </ul>
         </div>
 
@@ -109,13 +106,47 @@
 
         <div id="high-scores" class="screen frame">
             <h1>HIGH SCORES</h1>
-            <ol>
-                <li id="1st">10000</li>
-                <li id="2nd">9000</li>
-                <li id="3rd">8000</li>
-                <li id="4th">7000</li>
-                <li id="5th">0</li>
-            </ol>
+            <table class="table table-sm">
+                <tbody id="high-scores-list">
+                    <tr>
+                        <th>Score</th>
+                        <th>Level</th>
+                        <th>Initials</th>
+                        <th>Date</th>
+                    </tr>
+                    <tr>
+                        <td>23456</td>
+                        <td>100</td>
+                        <td>D.A.D.</td>
+                        <td>Jan-03-87</td>
+                    </tr>
+                    <tr>
+                        <td>12345</td>
+                        <td>67</td>
+                        <td>D.A.D.</td>
+                        <td>Jan-03-87</td>
+                    </tr>
+                    <tr>
+                        <td>1234</td>
+                        <td>7</td>
+                        <td>D.A.D.</td>
+                        <td>Jan-03-87</td>
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>3</td>
+                        <td>D.A.D.</td>
+                        <td>Jan-03-87</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>1</td>
+                        <td>D.A.D.</td>
+                        <td>Jan-03-87</td>
+                    </tr>
+                </tbody>
+            </table>
+
             <ul class="menu">
                 <li>
                     <button id="id-high-scores-back" class="btn btn-primary">Back</button>
