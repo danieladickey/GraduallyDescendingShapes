@@ -451,7 +451,7 @@ MyGame.objects.Player = function (spec) {
             play(twinkle);
             spec.level += 1;
             spec.startDrop -= 200;
-            spec.dropInterval -= 100 // make shapes drop faster when level increases
+            spec.dropInterval -= 50 // make shapes drop faster when level increases
             spec.currentLines -= 10;
         }
     }
