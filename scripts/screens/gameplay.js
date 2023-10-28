@@ -15,6 +15,11 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
     let attractMode = true;
     let highScores;
 
+    const fontStyle = 'monospace';
+    const fontLarge = 70 * unit / 100;
+    const fontMedium = 40 * unit / 80;
+    const fontSmall = 22 * unit / 60;
+
     let theParticles = systems.ParticleSystem({
         center: { x: 300, y: 300 },
         size: { mean: 25, stdev: 20 },
@@ -67,7 +72,6 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         [0, 0, 0],
     ];
 
-    // TODO: simplify shapes (why is this array even around?)
     let shapes = [null,
         shapeI,
         shapeL,
@@ -192,7 +196,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const displayNext = objects.Text({
         text: "NEXT",
-        font: '22pt monospace',
+        font: `${fontSmall}pt ${fontStyle}`,
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
         position: { x: 15 * unit, y: (1 + yOffset) * unit }, // 16
@@ -209,7 +213,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const displayScore = objects.Text({
         text: "SCORE",
-        font: '22pt monospace',
+        font: `${fontSmall}pt ${fontStyle}`,
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
         position: { x: 15 * unit, y: (6 + yOffset) * unit }, // 1
@@ -226,7 +230,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const showScore = objects.Text({
         text: "0",
-        font: '70pt monospace',
+        font: `${fontLarge}pt ${fontStyle}`,
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
         position: { x: 15 * unit, y: (8.25 + yOffset) * unit }, // 1
@@ -237,7 +241,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const displayLevel = objects.Text({
         text: "LEVEL",
-        font: '22pt monospace',
+        font: `${fontSmall}pt ${fontStyle}`,
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
         position: { x: 15 * unit, y: (11 + yOffset) * unit }, // 6
@@ -254,7 +258,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const showLevel = objects.Text({
         text: "0",
-        font: '70pt monospace',
+        font: `${fontLarge}pt ${fontStyle}`,
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
         position: { x: 15 * unit, y: (13.25 + yOffset) * unit }, // 1
@@ -265,7 +269,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const displayLines = objects.Text({
         text: "LINES CLEARED",
-        font: '22pt monospace',
+        font: `${fontSmall}pt ${fontStyle}`,
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
         position: { x: 15 * unit, y: (16 + yOffset) * unit }, // 11
@@ -282,7 +286,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const showLines = objects.Text({
         text: "0",
-        font: '70pt monospace',
+        font: `${fontLarge}pt ${fontStyle}`,
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
         position: { x: 15 * unit, y: (18.25 + yOffset) * unit }, // 1
@@ -293,7 +297,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const displayHighScore = objects.Text({
         text: "NEW HIGH SCORE",
-        font: '40pt monospace',
+        font: `${fontMedium}pt ${fontStyle}`,
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
         position: { x: 5 * unit, y: 9 * unit },
@@ -304,7 +308,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const showHighScore = objects.Text({
         text: "0",
-        font: '70pt monospace',
+        font: `${fontLarge}pt ${fontStyle}`,
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
         position: { x: 5 * unit, y: 11 * unit },
@@ -315,7 +319,7 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
 
     const showGameOver = objects.Text({
         text: "GAME OVER",
-        font: '70pt monospace',
+        font: `${fontLarge}pt ${fontStyle}`,
         fillStyle: 'rgba(255, 255, 255, 1)',
         strokeStyle: 'rgba(255, 255, 255, 1)',
         position: { x: 5 * unit, y: 9 * unit },

@@ -71,8 +71,8 @@ MyGame.graphics = (function (objects, renderer) {
         context.translate(spec.position.x, spec.position.y);
         context.rotate(spec.rotation);
         context.translate(-spec.position.x, -spec.position.y);
-        context.fillText(spec.text, spec.position.x, spec.position.y);
-        context.strokeText(spec.text, spec.position.x, spec.position.y);
+        context.fillText(spec.text.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","), spec.position.x, spec.position.y);
+        context.strokeText(spec.text.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","), spec.position.x, spec.position.y);
         context.restore();
     }
 
