@@ -39,12 +39,23 @@ if (previousSettings !== null) {
 // set buttons to show controls when website loads this script
 for (let i = 1; i <= NUMBER_OF_CONTROLS; i++) {
     let keyString = "key" + i;
-
     // special case for space bar (" ")
     if (controls[keyString] === " ") {
         document.getElementById(keyString).innerHTML = "Space";
-        // default case
-    } else {
+    }
+    else if (controls[keyString] === "ArrowLeft") {
+        document.getElementById(keyString).innerHTML = '\u2190';
+    }
+    else if (controls[keyString] === "ArrowUp") {
+        document.getElementById(keyString).innerHTML = '\u2191';
+    }
+    else if (controls[keyString] === "ArrowRight") {
+        document.getElementById(keyString).innerHTML = '\u2192';
+    }
+    else if (controls[keyString] === "ArrowDown") {
+        document.getElementById(keyString).innerHTML = '\u2193';
+    }
+    else { // default case
         document.getElementById(keyString).innerHTML = controls[keyString];
     }
 }

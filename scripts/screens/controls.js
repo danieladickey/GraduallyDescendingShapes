@@ -70,6 +70,18 @@ MyGame.screens['controls'] = (function (game, screens) {
             if (e.key === " ") {
                 e.target.innerHTML = "Space"
             }
+            else if (e.key === "ArrowLeft") {
+                e.target.innerHTML = '\u2190';
+            }
+            else if (e.key === "ArrowUp") {
+                e.target.innerHTML = '\u2191';
+            }
+            else if (e.key === "ArrowRight") {
+                e.target.innerHTML = '\u2192';
+            }
+            else if (e.key === "ArrowDown") {
+                e.target.innerHTML = '\u2193';
+            }
             else {
                 e.target.innerHTML = e.key;
             }
