@@ -44,10 +44,10 @@ MyGame.objects.HighScores = function (spec) {
         const newHS = []
         for (let i = capacity; i > 0; i--) {
             newHS.push({
-                score: i ** i + i * 5 + i,
-                level: 0,
-                initials: "Y.2.K.",
-                date: "DEC-31-99"
+                score: 0,
+                level: "-",
+                initials: "-",
+                date: "-"
             });
         }
         return newHS;

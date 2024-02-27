@@ -380,6 +380,8 @@ MyGame.screens['game-play'] = (function (game, objects, renderer, graphics, inpu
         // if player made a record score: after 3 seconds exit game and let player enter their initials
         else if (endGameTimer > 3000 && newHighScore) {
             game.showScreen('new-high-score');
+            // highlight and select initial input and any remaining initials for quicker entry by user
+            document.getElementById("id-initials-input").select();
             resetGame();
         }
         // if player failed to break any records: after 3 seconds exit game and go to main score menu screen
