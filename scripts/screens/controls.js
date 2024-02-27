@@ -12,48 +12,14 @@ MyGame.screens['controls'] = (function (game, screens) {
         );
 
         // set game control keys
-        document.getElementById("key1").addEventListener(
-            'click',
-            function () {
-                getKey("key1");
-            }
-        );
-        document.getElementById("key2").addEventListener(
-            'click',
-            function () {
-                getKey("key2");
-            }
-        );
-        document.getElementById("key3").addEventListener(
-            'click',
-            function () {
-                getKey("key3");
-            }
-        );
-        document.getElementById("key4").addEventListener(
-            'click',
-            function () {
-                getKey("key4");
-            }
-        );
-        document.getElementById("key5").addEventListener(
-            'click',
-            function () {
-                getKey("key5");
-            }
-        );
-        document.getElementById("key6").addEventListener(
-            'click',
-            function () {
-                getKey("key6");
-            }
-        );
-        document.getElementById("key7").addEventListener(
-            'click',
-            function () {
-                getKey("key7");
-            }
-        );
+        for (let i = 1; i < 8; i++) {
+            document.getElementById("key" + i.toString()).addEventListener(
+                'click',
+                function () {
+                    getKey("key" + i.toString());
+                }
+            );
+        }
     }
 
     // get which key to set
